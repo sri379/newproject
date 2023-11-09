@@ -1,0 +1,35 @@
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+ 
+  .detailsContainerStyle {
+    border: 1px solid goldenrod; /* Change border color */
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(6, 43, 166, 0.2);
+    text-align: center;
+  }
+  
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+ 
+
+  
+  
+  
+  
+  
+
+  

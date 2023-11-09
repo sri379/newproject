@@ -1,0 +1,82 @@
+/* EmployeeList.css */
+
+/* Container styles */
+.employee-table-container {
+    text-align: center;
+    overflow: auto;
+  }
+  
+  /* Title styles */
+  h2 {
+    font-size: 28px;
+    margin: 0; /* Remove margin at the top */
+    padding: 0; /* Remove padding at the top */
+  }
+  
+  /* Create space between h2 and the button */
+  .time-history-button {
+    margin-top: 10px; /* Add spacing between h2 and button */
+    padding: 10px 10px;
+    background-color: lightseagreen;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  
+  
+  .time-history-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ... (other CSS rules remain the same) */
+  
+  
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+
+  .employee-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  
+  .employee-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  
+  .employee-table a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .employee-table a:hover {
+    text-decoration: underline;
+  }
+  .logout-button1 {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+  
+  

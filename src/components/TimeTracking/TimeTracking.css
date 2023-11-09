@@ -1,0 +1,63 @@
+/* TimeTracking.css */
+
+/* Style the button container */
+.time-tracking-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Style the "Back" button */
+.back-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.logout-button {
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Style the Time Records section */
+h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Style Time Records entries */
+.time-record-entry {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(6, 43, 166, 0.2);
+}
+
+/* Add more styles as needed */

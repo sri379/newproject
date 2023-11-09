@@ -1,0 +1,94 @@
+/* TimeHistory.css */
+
+/* Style the main container */
+div {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Style the headings */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Style the label and input/select elements */
+label {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+select,
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the table */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(6, 43, 166, 0.2);
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.back-button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+  position: absolute; /* Position the button absolutely within the container */
+  top: 10px; /* Adjust the top distance as needed */
+  right: 10px;
+}
+
+.time-in {
+  background-color: skyblue;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.logout-button {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
