@@ -26,11 +26,13 @@ const Login = ({ isAuth, setIsAuth }) => {
   return (
     
     <div className="login-body">
-    
+    {/* <img className='thiran-tech-logo' src={require("../../thiran techhh.png")} alt="ID Icon"  /> */}
       
     <div className="login-container">
-    <img src={require("../../thiran tech.png")}  alt="Thiran Tech Logo" class="thiran-tech-logo" />
+    
+    <h2 className= "log-heading" >'Welcome to TimeForge Portal!'</h2>
       <h1 className="login-heading">Login</h1>
+     
       <label className="login-label">
         Name:
         <input className='login-text'

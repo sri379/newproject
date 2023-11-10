@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
 import './TimeTracking.css';
+import { ToastContainer, Toast, Zoom, Bounce, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   const navigate = useNavigate();
@@ -46,8 +49,9 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
 
         setTimeRecords(updatedTimeRecords);
         saveTimeRecordsToLocalStorage(updatedTimeRecords);
+        toast.success("Time In recorded successfully!");
       } else {
-        alert("Time In already recorded for today.");
+        toast.error("Time In already recorded for today.");
       }
     }
   };
@@ -76,11 +80,14 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
           const updatedTimeRecords = [...timeRecords];
           setTimeRecords(updatedTimeRecords);
           saveTimeRecordsToLocalStorage(updatedTimeRecords);
+          toast.success("Time Out recorded successfully!");
         } else {
-          alert("Time Out already recorded for today.");
+        toast.error("Time Out already recorded for today.");
+         
         }
       } else {
-        alert("Time Out already recorded for today.");
+        toast.error("Time Out already recorded for today.");
+        
       }
     }
   };
@@ -104,6 +111,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
       localStorage.setItem('users', JSON.stringify(users));
       console.log('Users data in local storage after update:', JSON.parse(localStorage.getItem('users')));
     }
+    toast.info("Logged out successfully!");
     logout();
     navigate('/');
   };
@@ -114,6 +122,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
 
   return (
     <div className='list1'>
+                  <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
       <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
       <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
       <button onClick={navigateToEmployeeList} className="back-button">Back</button>

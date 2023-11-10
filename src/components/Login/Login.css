@@ -1,11 +1,9 @@
-
 body, html {
     margin: 0;
     padding: 0;
 }
 
 .login-body {
-
     overflow: hidden;
     background-image: url('../../time-sheet.png');
     background-size: cover;
@@ -15,10 +13,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-
-
 
 .login-container {
     text-align: center;
@@ -26,23 +21,31 @@ body, html {
 }
 
 .login-heading {
-    font-size: 32px;
+    font-size: 30;
     margin-bottom: 20px;
+}
+.log-heading {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/* New styles for grid container */
+.login-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
 .login-label {
-    display: block;
     text-align: left;
     margin-bottom: 10px;
     font-weight: bold;
     font-size: larger;
-   
 }
 
 .login-text, .login-password {
-    width: 95%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     border: 2px solid #ccc;
     border-radius: 4px;
     text-align: center;
@@ -57,7 +60,8 @@ body, html {
     font-size: 16px;
     cursor: pointer;
 }
-.thiran-tech-logo {
-    width: 60px; 
-    
-  }
+
+/* .thiran-tech-logo {
+    width: 150px;
+    margin-bottom: 10px;
+} */

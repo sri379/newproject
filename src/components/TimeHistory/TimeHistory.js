@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import users from '../../data/User';
 import { useNavigate } from 'react-router-dom';
 import './TimeHistory.css';
+import { ToastContainer, Toast, Zoom, Bounce, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TimeHistory = ({ timeRecords }) => {
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const TimeHistory = ({ timeRecords }) => {
 
   const handleGenerateTimeHistory = () => {
     if (!selectedEmployee || !selectedDate) {
-      alert("Please select an employee and a date.");
+      toast.error("Please select an employee and a date.");
       return;
     }
   
@@ -48,7 +50,7 @@ const TimeHistory = ({ timeRecords }) => {
 
   const handleGenerateMonthWiseReport = () => {
     if (!selectedEmployee || !selectedMonth) {
-      alert("Please select an employee and a month.");
+      toast.error("Please select an employee and a month.");
       return;
     }
 
@@ -62,7 +64,8 @@ const TimeHistory = ({ timeRecords }) => {
     });
 
     if (monthWiseRecords.length === 0) {
-      alert("No records found for the selected employee and month.");
+        toast.error("No records found for the selected employee and month.");
+     
     } else {
       setGeneratedTimeHistory(monthWiseRecords);
       setIsEmployeeAndDateSelected(true);
@@ -93,6 +96,7 @@ const TimeHistory = ({ timeRecords }) => {
 
   return (
     <div className='list2'>
+                          <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
       <h1>Time History</h1>
       <button className='back-button' onClick={navigateToEmployeeList}>
         Back
