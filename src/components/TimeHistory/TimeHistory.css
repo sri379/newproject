@@ -1,18 +1,18 @@
 /* TimeHistory.css */
 
 /* Style the main container */
-div {
+.history {
   text-align: center;
   margin: 20px;
 }
 
 /* Style the headings */
-h1 {
+.his {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-h2 {
+.h2-his {
   font-size: 20px;
   margin-top: 20px;
 }
@@ -31,6 +31,7 @@ button {
   font-size: 16px;
   border-radius: 4px;
   margin-right: 10px;
+  
 }
 
 button {
@@ -38,11 +39,12 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
+  
 }
 
-button:hover {
+/* button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Style the table */
 .employee-table {
@@ -81,6 +83,7 @@ button:hover {
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
+ 
 }
 .logout-button {
   background-color: orangered;
@@ -91,4 +94,6 @@ button:hover {
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
+  top: 10px; /* Adjust the top distance as needed */
+  right: 10px;
 }

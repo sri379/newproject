@@ -40,6 +40,10 @@ const EmployeeDetails = () => {
                             <td>{user.designation}</td>
                         </tr>
                         <tr>
+                            <th><img src={require("../../images/project.jpg")} alt="Project Icon" style={iconStyle} /></th>
+                            <td>{user.project}</td>
+                        </tr>
+                        <tr>
                             <th><img src={require("../../images/contact-icon.png")} alt="Contact Icon" style={iconStyle} /></th>
                             <td>{user.contactNumber}</td>
                         </tr>

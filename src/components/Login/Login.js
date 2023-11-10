@@ -25,8 +25,11 @@ const Login = ({ isAuth, setIsAuth }) => {
 
   return (
     
-    <div className="login-center">
+    <div className="login-body">
+    
+      
     <div className="login-container">
+    <img src={require("../../thiran tech.png")}  alt="Thiran Tech Logo" class="thiran-tech-logo" />
       <h1 className="login-heading">Login</h1>
       <label className="login-label">
         Name:
@@ -51,6 +54,7 @@ const Login = ({ isAuth, setIsAuth }) => {
       </button>
     </div>
   </div>
+
   
   );
 };

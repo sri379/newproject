@@ -10,6 +10,8 @@
     font-size: 16px;
     cursor: pointer;
     margin-right: 20px;
+    top: 10px; /* Adjust the top distance as needed */
+  right: 10px;
 }
 
 /* Style the "Back" button */
@@ -33,10 +35,12 @@
     font-size: 16px;
     cursor: pointer;
     margin-right: 20px;
+    top: 10px; /* Adjust the top distance as needed */
+  right: 10px;
 }
 
 /* Style the Time Records section */
-h2 {
+.tracking {
     margin-top: 20px;
     font-size: 24px;
 }
