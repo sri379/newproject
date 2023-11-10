@@ -13,23 +13,37 @@ const TimeHistory = ({ timeRecords }) => {
   const [selectedMonth, setSelectedMonth] = useState(1); // Initialize selectedMonth with 1 (January)
 
   const handleGenerateTimeHistory = () => {
+    if (!selectedEmployee || !selectedDate) {
+      alert("Please select an employee and a date.");
+      return;
+    }
+  
     const filteredRecords = timeRecords.filter((record) => {
       const selectedDateToMatch = new Date(selectedDate).toLocaleDateString(); // Format selectedDate
-
+  
       return (
-        (!selectedEmployee || record.userName === selectedEmployee) &&
-        (!selectedDate || record.date === selectedDateToMatch)
+        record.userName === selectedEmployee &&
+        record.date === selectedDateToMatch
       );
     });
-
+  
     setGeneratedTimeHistory(filteredRecords);
     setIsEmployeeAndDateSelected(true);
+
+    setSelectedEmployee('');
+    setSelectedDate('');
+    setSelectedMonth(1);
   };
+  
 
   const handleShowAllEmployeeTimeHistory = () => {
     const allEmployeeRecords = timeRecords;
     setGeneratedTimeHistory(allEmployeeRecords);
     setIsEmployeeAndDateSelected(true);
+
+    setSelectedEmployee('');
+    setSelectedDate('');
+    setSelectedMonth(1);
   };
 
   const handleGenerateMonthWiseReport = () => {
@@ -53,6 +67,9 @@ const TimeHistory = ({ timeRecords }) => {
       setGeneratedTimeHistory(monthWiseRecords);
       setIsEmployeeAndDateSelected(true);
     }
+    setSelectedEmployee('');
+    setSelectedDate('');
+    setSelectedMonth(1);
   };
 
   const monthOptions = [
