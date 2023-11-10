@@ -86,6 +86,7 @@ const EmployeeList = ({logout}) => {
                         </tr>
                     ))}
                 </tbody>
+                
             </table>
             <Pagination
                 currentPage={currentPage}
