@@ -113,7 +113,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   };
 
   return (
-    <div>
+    <div className='list1'>
       <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
       <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
       <button onClick={navigateToEmployeeList} className="back-button">Back</button>
@@ -133,6 +133,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
         </ul>
       </div>
     </div>
+  
   );
 };
 

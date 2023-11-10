@@ -1,4 +1,11 @@
-
+.list {
+  background-color: silver; /* Set your desired background color */
+  margin: 0; /* Remove default body margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .logo-container {
     display: flex;
     justify-content: center;

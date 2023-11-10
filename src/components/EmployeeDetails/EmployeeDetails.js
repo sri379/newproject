@@ -21,6 +21,7 @@ const EmployeeDetails = () => {
         navigate('/employee-list')
         }
     return (
+        <div className='list'>
         <div className='logo-container'>
             <div className="detailsContainerStyle">
             <button className='back-button' onClick={navigateToEmployeeList}>Back</button>&nbsp;&nbsp;&nbsp;
@@ -54,6 +55,7 @@ const EmployeeDetails = () => {
                     </tbody>
                 </table>
             </div></div>
+            </div>
 
     );
 };

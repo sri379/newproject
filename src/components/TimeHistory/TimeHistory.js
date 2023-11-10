@@ -92,7 +92,7 @@ const TimeHistory = ({ timeRecords }) => {
   };
 
   return (
-    <div>
+    <div className='list2'>
       <h1>Time History</h1>
       <button className='back-button' onClick={navigateToEmployeeList}>
         Back
