@@ -32,9 +32,9 @@ const TimeHistory = ({ timeRecords }) => {
     setGeneratedTimeHistory(filteredRecords);
     setIsEmployeeAndDateSelected(true);
 
-    setSelectedEmployee('');
-    setSelectedDate('');
-    setSelectedMonth(1);
+    // setSelectedEmployee('');
+    // setSelectedDate('');
+    // setSelectedMonth(1);
   };
   
 
@@ -43,9 +43,9 @@ const TimeHistory = ({ timeRecords }) => {
     setGeneratedTimeHistory(allEmployeeRecords);
     setIsEmployeeAndDateSelected(true);
 
-    setSelectedEmployee('');
-    setSelectedDate('');
-    setSelectedMonth(1);
+    // setSelectedEmployee('');
+    // setSelectedDate('');
+    // setSelectedMonth(1);
   };
 
   const handleGenerateMonthWiseReport = () => {
@@ -70,9 +70,9 @@ const TimeHistory = ({ timeRecords }) => {
       setGeneratedTimeHistory(monthWiseRecords);
       setIsEmployeeAndDateSelected(true);
     }
-    setSelectedEmployee('');
-    setSelectedDate('');
-    setSelectedMonth(1);
+    // setSelectedEmployee('');
+    // setSelectedDate('');
+    // setSelectedMonth(1);
   };
 
   const monthOptions = [

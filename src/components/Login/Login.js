@@ -7,6 +7,7 @@ const Login = ({ isAuth, setIsAuth }) => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     const user = users.find((user) => user.name === name && user.password === password);
@@ -24,40 +25,43 @@ const Login = ({ isAuth, setIsAuth }) => {
   };
 
   return (
-    
     <div className="login-body">
-    {/* <img className='thiran-tech-logo' src={require("../../thiran techhh.png")} alt="ID Icon"  /> */}
-      
-    <div className="login-container">
-    
-    <h2 className= "log-heading" >'Welcome to TimeForge Portal!'</h2>
-      <h1 className="login-heading">Login</h1>
-     
-      <label className="login-label">
-        Name:
-        <input className='login-text'
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <br />
-      <label className="login-label">
-        Password:
-        <input className='login-password'
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <br />
-      <button className="button-login" onClick={handleLogin}>
-        Login
-      </button>
+      <div className="login-container">
+        <h2 className="log-heading">'Welcome to TimeForge Portal!'</h2>
+        <h1 className="login-heading">Login</h1>
+        <label className="login-label">
+          Name:
+          <input
+            className="login-text"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <br />
+        <label className="login-label">
+          Password:
+          <div className="password-input">
+            <input
+              className="login-password"
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            Show Password
+            <input
+              type="checkbox"
+              checked={showPassword}
+              onChange={() => setShowPassword(!showPassword)}
+            />
+          </div>
+        </label>
+        <br />
+        <button className="button-login" onClick={handleLogin}>
+          Login
+        </button>
+      </div>
     </div>
-  </div>
-
-  
   );
 };
 
