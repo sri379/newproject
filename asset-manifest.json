@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sri379/.github.io/newproject/static/css/main.7775748c.css",
+    "main.js": "/sri379/.github.io/newproject/static/js/main.84ec3fe1.js",
+    "static/media/time-sheet.png": "/sri379/.github.io/newproject/static/media/time-sheet.92e6dd58ca3698bc3802.png",
+    "index.html": "/sri379/.github.io/newproject/index.html",
+    "main.7775748c.css.map": "/sri379/.github.io/newproject/static/css/main.7775748c.css.map",
+    "main.84ec3fe1.js.map": "/sri379/.github.io/newproject/static/js/main.84ec3fe1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7775748c.css",
+    "static/js/main.84ec3fe1.js"
+  ]
+}
