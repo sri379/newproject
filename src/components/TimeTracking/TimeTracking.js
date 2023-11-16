@@ -121,7 +121,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   };
 
   return (
-    <div className='list1'>
+    <div className='new'>
                   <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
       <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
       <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>

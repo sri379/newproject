@@ -4,6 +4,7 @@ import Pagination from '../Pagination/Pagination';
 import './EmployeeList.css';
 import users from '../../data/User';
 import '../Pagination/Pagination.css';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 
 const itemsPerPage = 10;
 
@@ -52,7 +53,7 @@ const EmployeeList = ({ logout, isAuth }) => {
       localStorage.setItem('users', JSON.stringify(users));
       console.log('Users data in local storage after update:', JSON.parse(localStorage.getItem('users')));
     }
-
+    toast.info("Logged out successfully!");
     logout();
     navigate('/');
   };
@@ -60,12 +61,7 @@ const EmployeeList = ({ logout, isAuth }) => {
   return (
     <div className="employee-table-container">
       <h2>Employee List</h2>
-      <button
-        className="time-history-button"
-        onClick={navigateToTimeHistory}
-      >
-        Time History
-      </button>&nbsp;&nbsp;
+     
       <button className='logout-button1' onClick={handleLogout}>
         Logout
       </button>

@@ -9,6 +9,10 @@ const EmployeeDetails = () => {
     const navigate=useNavigate();
     const { id } = useParams();
     const user = users.find((user) => user.id === parseInt(id));
+    
+
+    console.log('Users Array:', users);
+    console.log('ID Parameter:', id);
 
     if (!user) {
         return <div>User not found</div>;

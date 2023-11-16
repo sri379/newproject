@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import users from '../../data/User';
 import { useNavigate } from 'react-router-dom';
 import './TimeHistory.css';
-import { ToastContainer, Toast, Zoom, Bounce, toast} from 'react-toastify';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const TimeHistory = ({ timeRecords }) => {
+const TimeHistory = ({ timeRecords, isAuth }) => {
   const navigate = useNavigate();
   const [selectedEmployee, setSelectedEmployee] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
@@ -15,37 +15,29 @@ const TimeHistory = ({ timeRecords }) => {
   const [selectedMonth, setSelectedMonth] = useState(1); // Initialize selectedMonth with 1 (January)
 
   const handleGenerateTimeHistory = () => {
+    console.log('Selected Employee:', selectedEmployee);
+    console.log('Selected Date:', selectedDate);
     if (!selectedEmployee || !selectedDate) {
       toast.error("Please select an employee and a date.");
       return;
     }
-  
+
     const filteredRecords = timeRecords.filter((record) => {
       const selectedDateToMatch = new Date(selectedDate).toLocaleDateString(); // Format selectedDate
-  
+
       return (
         record.userName === selectedEmployee &&
         record.date === selectedDateToMatch
       );
     });
-  
+
     setGeneratedTimeHistory(filteredRecords);
     setIsEmployeeAndDateSelected(true);
-
-    // setSelectedEmployee('');
-    // setSelectedDate('');
-    // setSelectedMonth(1);
   };
   
-
   const handleShowAllEmployeeTimeHistory = () => {
-    const allEmployeeRecords = timeRecords;
-    setGeneratedTimeHistory(allEmployeeRecords);
+    setGeneratedTimeHistory(timeRecords);
     setIsEmployeeAndDateSelected(true);
-
-    // setSelectedEmployee('');
-    // setSelectedDate('');
-    // setSelectedMonth(1);
   };
 
   const handleGenerateMonthWiseReport = () => {
@@ -64,41 +56,25 @@ const TimeHistory = ({ timeRecords }) => {
     });
 
     if (monthWiseRecords.length === 0) {
-        toast.error("No records found for the selected employee and month.");
-     
+      toast.error("No records found for the selected employee and month.");
     } else {
       setGeneratedTimeHistory(monthWiseRecords);
       setIsEmployeeAndDateSelected(true);
     }
-    // setSelectedEmployee('');
-    // setSelectedDate('');
-    // setSelectedMonth(1);
   };
 
-  const monthOptions = [
-    { value: 1, label: 'January' },
-    { value: 2, label: 'February' },
-    { value: 3, label: 'March' },
-    { value: 4, label: 'April' },
-    { value: 5, label: 'May' },
-    { value: 6, label: 'June' },
-    { value: 7, label: 'July' },
-    { value: 8, label: 'August' },
-    { value: 9, label: 'September' },
-    { value: 10, label: 'October' },
-    { value: 11, label: 'November' },
-    { value: 12, label: 'December' },
-  ];
-
-  const navigateToEmployeeList = () => {
-    navigate('/employee-list');
+  const navigateToAdmin = () => {
+    navigate('/admin-dashboard');
   };
 
   return (
     <div className='list2'>
-                          <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
+      <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
       <h1>Time History</h1>
-      <button className='back-button' onClick={navigateToEmployeeList}>
+      {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
+        <button onClick={navigateToAdmin}>Employee List</button>
+      )}
+      <button className='back-button' onClick={navigateToAdmin}>
         Back
       </button>
       &nbsp;&nbsp;&nbsp;
@@ -132,17 +108,24 @@ const TimeHistory = ({ timeRecords }) => {
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
         >
-          {monthOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
+          <option value="">Select a Month</option>
+          <option value={1}>January</option>
+          <option value={2}>February</option>
+          <option value={3}>March</option>
+          <option value={4}>April</option>
+          <option value={5}>May</option>
+          <option value={6}>June</option>
+          <option value={7}>July</option>
+          <option value={8}>August</option>
+          <option value={9}>September</option>
+          <option value={10}>October</option>
+          <option value={11}>November</option>
+          <option value={12}>December</option>
         </select>
       </div>
-      <button onClick={handleGenerateTimeHistory}>Generate Time History</button>&nbsp;&nbsp;&nbsp;
+      <button onClick={handleGenerateTimeHistory}>Generate Time History</button>
       <button onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>&nbsp;&nbsp;&nbsp;
       <button onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>
-
       {isEmployeeAndDateSelected && (
         <>
           {generatedTimeHistory.length > 0 ? (

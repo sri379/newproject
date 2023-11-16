@@ -329,6 +329,14 @@ const users = [
    
     project: "Frontend Fusion",
   },
+  {
+    id:101,
+    name: "Admin",
+    password: "adminpassword", // Set a secure password for the admin
+    designation: "Administrator",
+    isLogin: false,
+    project: "Admin Dashboard",
+  },
 ];
 
 export default users;

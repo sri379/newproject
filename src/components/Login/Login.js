@@ -1,8 +1,9 @@
+// Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
 import './Login.css'; 
-import { ToastContainer, Toast, Zoom, Bounce, toast} from 'react-toastify';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 
 const Login = ({ isAuth, setIsAuth }) => {
   const navigate = useNavigate();
@@ -19,18 +20,22 @@ const Login = ({ isAuth, setIsAuth }) => {
       localStorage.setItem('currentUser', JSON.stringify(user));
       setIsAuth(user);
 
-      navigate('/employee-list');
+      if (user.name === 'Admin') {
+        // If the user is an admin, navigate to the admin dashboard or any desired route
+        navigate('/admin-dashboard');
+      } else {
+        navigate('/employee-list');
+      }
     } else {
       toast.error('Invalid Login Credentials');
     }
   };
 
   return (
-    
     <div className="login-body">
-                          <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
+      <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false} />
       <div className="login-container">
-        <h2 className="log-heading">'Welcome to TimeForge Portal!'</h2>
+        <h2 className="log-heading">Welcome to TimeForge Portal!</h2>
         <h1 className="login-heading">Login</h1>
         <label className="login-label">
           Name:
