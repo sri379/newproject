@@ -11,6 +11,12 @@ const AdminDashboard = ({ isAuth,logout }) => {
   const navigateToTimeHistory = () => {
     navigate('/time-history');
   };
+  const navigateToAddUserForm = () => {
+    navigate('/add-user-form');
+  };
+  const navigateToEmployeeList = () => {
+    navigate('/employee-list');
+  };
   const handleLogout = () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -34,12 +40,20 @@ const AdminDashboard = ({ isAuth,logout }) => {
     logout();
     navigate('/');
   };
+
   return (
     <div className='login-body1'>
     <div className="list1">   <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
-      
+    {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
+    <>
+    <button onClick={navigateToAddUserForm}>Add User</button>
+   
+  </>
+         )}
       {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
-        <button onClick={navigateToTimeHistory}>Time History</button>
+       <> <button onClick={navigateToTimeHistory}>Time History</button>
+        <button onClick={navigateToEmployeeList}>EmployeeList</button>
+        </>
       )}
        <button onClick={handleLogout} className="logout-button">Logout</button>
     
