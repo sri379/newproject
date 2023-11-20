@@ -79,8 +79,12 @@ const AddUserForm = () => {
 };
 
   return (
-   
     <div className='now-body'>
+        
+   <header>
+   <h1 className='h1-form'>Time Forge Portal</h1>
+   <button onClick={backToAdmin} className="back-button1"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+   </header>
         
     <div className='user-form-container'>
          <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false} />
@@ -111,7 +115,7 @@ const AddUserForm = () => {
         <button type='button' className='now-button' onClick={handleCancel}>
           Cancel
         </button></span>
-        <button onClick={backToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+      
       </form>
     </div>
     </div>

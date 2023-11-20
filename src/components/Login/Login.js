@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
@@ -10,7 +8,6 @@ const Login = ({ isAuth, setIsAuth }) => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     const user = users.find((user) => user.name === name && user.password === password);
@@ -29,18 +26,21 @@ const Login = ({ isAuth, setIsAuth }) => {
       toast.error('Invalid Login Credentials');
     }
   };
-
+  const generateSpaces = (count) => {
+    return Array(count).fill('&nbsp;').join('');
+  };
+  const indentation = generateSpaces(12);  
   return (
     <div className="login-body">
       <ToastContainer position="bottom-right" transition={Zoom} autoClose={4000} closeOnClick={false} />
       <div className="login-container">
         <div className="login-left"></div>
         <div className="login-right">
-          <h2 className="log-heading">TimeForge Portal!</h2>
-         
+          <h2 className="log-heading">Time Forge Portal!</h2>
+
           <h1 className="login-heading">Login</h1>
           <div className="input-group">
-            <label className="login-label">Name:</label>
+              <label className="login-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:</label>
             <input
               className="login-text"
               type="text"
@@ -49,21 +49,13 @@ const Login = ({ isAuth, setIsAuth }) => {
             />
           </div>
           <div className="input-group password-input">
-            <label className="login-label">Password:</label>
+            <label className="login-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</label>
             <input
               className="login-password"
-              type={showPassword ? 'text' : 'password'}
+              type="password" // Always show dots for the password
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div className>
-              <input    
-                type="checkbox"
-                checked={showPassword}
-                onChange={() => setShowPassword(!showPassword)}
-              />
-              
-            </div>
           </div>
           <button className="button-login" onClick={handleLogin}>
             Login

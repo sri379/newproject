@@ -25,6 +25,9 @@ body, html {
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the content horizontally */
+     /* Add margin to separate from the image */
+
 }
 
 .login-right {
@@ -32,28 +35,23 @@ body, html {
     text-align: center;
 }
 
-.login-heading {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
 .log-heading {
-    font-size: x-large;
+    font-size: xx-large;
     margin-bottom: 20px;
     text-align: center;
     color: blue;
 }
 
 .log-heading1 {
-    font-size: 20px;
+    font-size: x-large;
     margin-bottom: 20px;
     text-align: center;
     color: black;
 }
 
 .login-label {
-    text-align: left; /* Updated to left */
-    margin-right: 10px; /* Add margin for spacing between label and input */
+    text-align: left;
+    margin-right: 10px;
     margin-bottom: 10px;
     font-weight: bold;
     color: black;
@@ -62,11 +60,11 @@ body, html {
 .login-text,
 .login-password,
 .input-group input {
-    width: 70%; /* Adjusted width for consistency */
+    width: 70%; /* Adjusted width for a slightly smaller form */
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    text-align: center; /* Updated to left */
+    text-align: left;
 }
 
 .button-login {
@@ -74,13 +72,12 @@ body, html {
     color: #fff;
     border: none;
     border-radius: 3px;
-    padding: 10px 20px;
-    font-size: 12px;
+    padding: 15px 15px;
+    font-size: 16px;
     cursor: pointer;
     width: 50%;
 }
 
-/* Additional styles for input groups */
 .input-group {
     margin-bottom: 20px;
 }
@@ -89,13 +86,13 @@ body, html {
     display: block;
     margin-bottom: 5px;
     color: black;
-    text-align: center; /* Updated to left */
+    text-align: left;
     font-size: medium;
 }
 
 .input-group input {
-    width: 50%;
-    padding: 8px;
+    width: 50%; /* Adjusted width for a slightly smaller form */
+    padding: 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;

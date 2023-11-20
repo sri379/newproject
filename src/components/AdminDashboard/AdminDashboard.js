@@ -45,27 +45,28 @@ const AdminDashboard = ({ isAuth,logout }) => {
   };
 
   return (
-    <div >
+    <div className='body-full' >
         <header>
         <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
-        <button className='log'onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
-        </header>
-       
-    <div className="list1">   
+        <div className="list1">   
     {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
     <>
-    <button  className='button-his'onClick={navigateToAddUserForm}>Add User</button> &nbsp;&nbsp;
+    <button  className='button-his1'onClick={navigateToAddUserForm}>Add User</button> &nbsp;&nbsp;
    
   </>
          )}
       {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
-       <> <button className='button-his' onClick={navigateToTimeHistory}>Time History</button> &nbsp;&nbsp;
-        <button  className='button-his'onClick={navigateToEmployeeList}>EmployeeList</button>
+       <> <button className='button-his1' onClick={navigateToTimeHistory}>Time History</button> &nbsp;&nbsp;
+        <button  className='button-his1'onClick={navigateToEmployeeList}>EmployeeList</button>
         </>
       )}
       
     
     </div>
+        <button className='log'onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
+        </header>
+       
+   
     </div>
   );
 };

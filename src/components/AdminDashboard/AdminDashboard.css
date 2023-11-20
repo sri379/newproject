@@ -7,7 +7,23 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    background-color: lightgoldenrodyellow;
+    background-color: palegoldenrod;
 }
-
-
+.body-full {
+    margin: 0;
+    padding: 0;
+    background-image: url('../../need-employee-timesheet-management-background-imag-upscaled\ \(2\).png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.button-his1 {
+    background-color: slategrey;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }

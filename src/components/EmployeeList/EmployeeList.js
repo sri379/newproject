@@ -12,6 +12,7 @@ const itemsPerPage = 4;
 const EmployeeList = ({ logout, isAuth }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoggedin, setIsLoggedIn] = useState(false);
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('users')) || []);
   const navigate = useNavigate();
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -32,25 +33,24 @@ const iconStyle1 = {
     height: '30px',
 };
 const handleDeleteUser = (userId) => {
-    // Implement the logic to delete a user based on the user ID
-    // Make sure to perform necessary validations and handle cases where deletion is not allowed.
-  
-    // For example, let's say you want to delete the user with the specified ID
-    const deletedUserIndex = users.findIndex((user) => user.id === userId);
-  
-    if (deletedUserIndex !== -1) {
-      users.splice(deletedUserIndex, 1);
-      toast.success(`User with ID ${userId} deleted successfully!`);
-  
+    // Display a confirmation dialog
+    const confirmDelete = window.confirm('Are you sure you want to delete this user?');
+
+    if (confirmDelete) {
+      // Update the local state
+      const updatedUsers = users.filter((user) => user.id !== userId);
+      setUsers(updatedUsers);
+
       // Update the local storage
-      localStorage.setItem('users', JSON.stringify(users));
-  
+      localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+      toast.success(`User with ID ${userId} deleted successfully!`);
+
       // Refresh the component to reflect the changes
       setCurrentPage(1);
-    } else {
-      toast.warning('User not found.');
     }
-  };const handleLogout = () => {
+  };
+const handleLogout = () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (currentUser) {
