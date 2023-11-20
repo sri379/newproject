@@ -97,3 +97,8 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+.remember-me-checkbox {
+    text-align: left;
+    margin-left: 155px; /* Adjust the margin as needed */
+  }
+  
