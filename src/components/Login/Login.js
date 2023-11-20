@@ -37,7 +37,7 @@ const Login = ({ isAuth, setIsAuth }) => {
         <div className="login-left"></div>
         <div className="login-right">
           <h2 className="log-heading">TimeForge Portal!</h2>
-          <h2 className="log-heading1">Welcome Back</h2>
+         
           <h1 className="login-heading">Login</h1>
           <div className="input-group">
             <label className="login-label">Name:</label>

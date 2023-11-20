@@ -1,6 +1,6 @@
-.list {
-  background-color: silver; /* Set your desired background color */
-  margin: 0; /* Remove default body margin */
+/* .list {
+  background-color: silver; 
+  margin: 0; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(6, 43, 166, 0.2);
     text-align: center;
-    width: 300px; /* Adjust the width as per your requirement */
+    width: 300px; 
   }
   
   h1 {
@@ -39,4 +39,4 @@
   
   
 
-  
+   */

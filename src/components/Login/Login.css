@@ -30,7 +30,6 @@ body, html {
 .login-right {
     flex: 1;
     text-align: center;
-    
 }
 
 .login-heading {
@@ -39,37 +38,35 @@ body, html {
 }
 
 .log-heading {
-    font-size: 30px;
+    font-size: x-large;
     margin-bottom: 20px;
     text-align: center;
-    color:blue;
-    font-style: italic;
-    
+    color: blue;
 }
 
 .log-heading1 {
     font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
-    color:black;
-    
+    color: black;
 }
 
 .login-label {
-    text-align: right;
+    text-align: left; /* Updated to left */
+    margin-right: 10px; /* Add margin for spacing between label and input */
     margin-bottom: 10px;
     font-weight: bold;
-  ;
     color: black;
 }
 
 .login-text,
-.login-password {
-    width: 70%;
+.login-password,
+.input-group input {
+    width: 70%; /* Adjusted width for consistency */
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    text-align: left;
+    text-align: center; /* Updated to left */
 }
 
 .button-login {
@@ -92,7 +89,7 @@ body, html {
     display: block;
     margin-bottom: 5px;
     color: black;
-    text-align: center;
+    text-align: center; /* Updated to left */
     font-size: medium;
 }
 

@@ -42,20 +42,25 @@ const AdminDashboard = ({ isAuth,logout }) => {
   };
 
   return (
-    <div className='login-body1'>
-    <div className="list1">   <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
+    <div >
+        <header>
+        <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
+        <button onClick={handleLogout} className="logout-button">Logout</button>
+        </header>
+       
+    <div className="list1">   
     {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
     <>
-    <button onClick={navigateToAddUserForm}>Add User</button>
+    <button  className='button-his'onClick={navigateToAddUserForm}>Add User</button> &nbsp;&nbsp;
    
   </>
          )}
       {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
-       <> <button onClick={navigateToTimeHistory}>Time History</button>
-        <button onClick={navigateToEmployeeList}>EmployeeList</button>
+       <> <button className='button-his' onClick={navigateToTimeHistory}>Time History</button> &nbsp;&nbsp;
+        <button  className='button-his'onClick={navigateToEmployeeList}>EmployeeList</button>
         </>
       )}
-       <button onClick={handleLogout} className="logout-button">Logout</button>
+      
     
     </div>
     </div>

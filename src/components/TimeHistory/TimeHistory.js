@@ -12,7 +12,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [generatedTimeHistory, setGeneratedTimeHistory] = useState([]);
   const [isEmployeeAndDateSelected, setIsEmployeeAndDateSelected] = useState(false);
-  const [selectedMonth, setSelectedMonth] = useState(1); // Initialize selectedMonth with 1 (January)
+  const [selectedMonth, setSelectedMonth] = useState(1);
 
   const handleGenerateTimeHistory = () => {
     console.log('Selected Employee:', selectedEmployee);
@@ -23,8 +23,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
     }
 
     const filteredRecords = timeRecords.filter((record) => {
-      const selectedDateToMatch = new Date(selectedDate).toLocaleDateString(); // Format selectedDate
-
+      const selectedDateToMatch = new Date(selectedDate).toLocaleDateString();
       return (
         record.userName === selectedEmployee &&
         record.date === selectedDateToMatch
@@ -34,7 +33,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
     setGeneratedTimeHistory(filteredRecords);
     setIsEmployeeAndDateSelected(true);
   };
-  
+
   const handleShowAllEmployeeTimeHistory = () => {
     setGeneratedTimeHistory(timeRecords);
     setIsEmployeeAndDateSelected(true);
@@ -68,19 +67,21 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
   };
 
   return (
-    <div className='list2'>
-      <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
-      <h1>Time History</h1>
-      {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
-        <button onClick={navigateToAdmin}>Employee List</button>
-      )}
-      <button className='back-button' onClick={navigateToAdmin}>
-        Back
-      </button>
-      &nbsp;&nbsp;&nbsp;
+    <div className="container">
+      <header>
+        <h1>Time Forge Portal</h1>
+        <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
+       
+        {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
+          <button onClick={navigateToAdmin}>Employee List</button>
+        )}
+        <button className='back-button' onClick={navigateToAdmin}>
+          Back
+        </button>
+      </header>
       <div>
-        <label>Select Employee:</label>
-        <select
+        <label className='select-his'>Select Employee:</label>
+        <select className='select-his'
           value={selectedEmployee}
           onChange={(e) => setSelectedEmployee(e.target.value)}
           required
@@ -94,8 +95,8 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
         </select>
       </div>
       <div>
-        <label>Select Date:</label>
-        <input
+        <label className='select-his'>Select Date:</label>
+        <input className='select-his'
           type="date"
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
@@ -103,8 +104,8 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
         />
       </div>
       <div>
-        <label>Select Month:</label>
-        <select
+        <label className='select-his'>Select Month:</label>
+        <select className='select-his'
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
         >
@@ -123,15 +124,15 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
           <option value={12}>December</option>
         </select>
       </div>
-      <button onClick={handleGenerateTimeHistory}>Generate Time History</button>
-      <button onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>&nbsp;&nbsp;&nbsp;
-      <button onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>
+      <button className='button-his' onClick={handleGenerateTimeHistory}>Generate Time History</button>
+      <button className='button-his' onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>
+      <button className='button-his' onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>
       {isEmployeeAndDateSelected && (
         <>
           {generatedTimeHistory.length > 0 ? (
             <div>
               <h2>Generated Time History</h2>
-              <table className="employee-table">
+              <table >
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -148,7 +149,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
                     <tr key={index}>
                       <td>{record.userId}</td>
                       <td>{record.userName}</td>
-                      <td>{record.project}</td> {/* Display project information */}
+                      <td>{record.project}</td>
                       <td>{record.date}</td>
                       <td>{record.timeIn}</td>
                       <td>{record.timeOut || 'N/A'}</td>

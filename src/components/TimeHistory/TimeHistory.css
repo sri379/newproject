@@ -1,102 +1,71 @@
 /* TimeHistory.css */
 
-/* Style the main container */
-.history {
-  text-align: center;
-  margin: 20px;
+/* Reset margin and padding on the body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Style the headings */
-.his {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.h2-his {
-  font-size: 20px;
-  margin-top: 20px;
+/* Style for labels */
+.select-his {
+  margin-bottom: 10px; /* Adjust as needed */
 }
 
-/* Style the label and input/select elements */
+/* Style for dropdowns and buttons */
+.select-his,
+.button-his {
+  margin-bottom: 15px; /* Adjust as needed */
+}
 
-
-select,
-input,
-button {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-right: 10px;
-  
-} 
-
-.li-button {
-  background-color: #007bff;
-  color:  #007bff;
+/* Style for buttons */
+.button-his {
+  background-color: steelblue;
+  color: white;
+  padding: 15px 15px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  
 }
 
-/* button:hover {
-  background-color: #0056b3;
-} */
 
-/* Style the table */
-.employee-table {
+/* Header styling */
+header {
   width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(6, 43, 166, 0.2);
+  text-align: center;
 }
 
-.employee-table th,
-.employee-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.list2 {
-  background-color: gainsboro; /* Set your desired background color */
-  margin: 0; /* Remove default body margin */
-
- 
-  height: 100vh;
-}
-
+/* Additional styling for the back button */
 .back-button {
-  background-color: black;
-  color: #fff;
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-right: 20px;
-  position: absolute; /* Position the button absolutely within the container */
-  top: 18px; /* Adjust the top distance as needed */
-  right: 10px;
 }
 
-.time-in {
-  background-color: skyblue;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 20px;
- 
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
-.logout-button {
-  background-color: orangered;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 20px;
-  top: 10px; /* Adjust the top distance as needed */
-  right: 10px;
+
+
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
 }

@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
 import './TimeTracking.css';
-import { ToastContainer, Toast, Zoom, Bounce, toast} from 'react-toastify';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   const navigate = useNavigate();
@@ -43,9 +42,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
           timeOut: null,
           timeDiff: 0,
           project: currentUserData.project, // Store project information
-        };
-
-        const updatedTimeRecords = [...timeRecords, newTimeRecord];
+        };  const updatedTimeRecords = [...timeRecords, newTimeRecord];
 
         setTimeRecords(updatedTimeRecords);
         saveTimeRecordsToLocalStorage(updatedTimeRecords);
@@ -56,6 +53,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
     }
   };
 
+ 
   const handleTimeOut = () => {
     if (currentUser && currentUser.isLogin) {
       if (timeRecords.length > 0) {
@@ -92,6 +90,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
     }
   };
 
+  
   const handleLogout = () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -122,27 +121,48 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
 
   return (
     <div className='new'>
-                  <ToastContainer position='bottom-right' draggable = {false} transition={Zoom} autoClose={4000} closeOnClick = {false}/>
-      <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
-      <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
-      <button onClick={navigateToEmployeeList} className="back-button">Back</button>
-      <button onClick={handleLogout} className="logout-button">Logout</button>
+      <header>
+      <h2 >Time Forge Portal</h2>
+        <ToastContainer position='bottom-right' draggable={false} transition={Zoom} autoClose={4000} closeOnClick={false} />
+        <button onClick={handleLogout} className="logout-button">Logout</button>
+      </header>
 
       <div>
+        <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
+        <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
+        <button onClick={navigateToEmployeeList} className="back-button">Back</button>
+
         <h2 className='tracking'>Time Records</h2>
-        <ul>
-          {timeRecords
-            .filter((record) => record.userId === currentUser.id)
-            .map((record, index) => (
-              <li key={index}>
-                User: {record.userName}, Date: {record.date}, Time In: {record.timeIn}, Time Out: {record.timeOut ? record.timeOut : "Not recorded"},
-                Time Diff: {record.timeDiff !== 'N/A' ? record.timeDiff : 'N/A'}, Project: {record.project}
-              </li>
-            ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Date</th>
+              <th>Project</th>
+              <th>Time In</th>
+              <th>Time Out</th>
+              <th>Time Diff</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            {timeRecords
+              .filter((record) => record.userId === currentUser.id)
+              .map((record, index) => (
+                <tr key={index}>
+                  <td>{record.userName}</td>
+                  <td>{record.date}</td>
+                  <td>{record.project}</td>
+                  <td>{record.timeIn}</td>
+                  <td>{record.timeOut ? record.timeOut : "Not recorded"}</td>
+                  <td>{record.timeDiff !== 'N/A' ? record.timeDiff : 'N/A'}</td>
+                  
+                </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
     </div>
-  
   );
 };
 

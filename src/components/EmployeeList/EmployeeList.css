@@ -1,88 +1,110 @@
-/* EmployeeList.css */
 
-/* Container styles */
-.employee-table-container {
-    text-align: center;
-    overflow: auto;
-  }
-  
-  /* Title styles */
-  h3 {
-    font-size: 38px;
-    margin: 0; /* Remove margin at the top */
-    padding: 0; /* Remove padding at the top */
-  }
-  
-  /* Create space between h2 and the button */
-  .time-history-button {
-    margin-top: 10px; /* Add spacing between h2 and button */
-    padding: 10px 10px;
-    background-color: lightseagreen;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    text-decoration: none;
-  }
-  
-  
-  .time-history-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* ... (other CSS rules remain the same) */
-  
-  
-  
-  .employee-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  
-  .employee-table th,
-  .employee-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
 
-  .employee-table th {
-    background-color: silver;
-    font-weight: bold;
-  }
-  
-  
-  .employee-table tr:nth-child(even) {
-    background-color: lightgoldenrodyellow;
-  }
-  .employee-table tr:nth-child(odd) {
-    background-color: whitesmoke;
-  }
-  
-  
-  .employee-table a {
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .employee-table a:hover {
-    text-decoration: underline;
-  }
-  .logout-button1 {
-    position: fixed;
-    right: 0px; /* Adjust the right value as needed */
-    top: 10px; /* Adjust the top value as needed */
-    background-color: orangered;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-decoration: none;
-    height: 35px;
-   
-  }
-  
-  
-  
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: lightgoldenrodyellow;
+  height: 60px; 
+}
+
+/* Title styles */
+h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Logout button styles */
+.logout-button {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  height: 35px;
+}
+.employee-container{
+  /* background-color: lightsteelblue; */
+}
+.logout-button:hover {
+  background-color: #ff6347;
+}
+
+/* Employee cards styles */
+.employee-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+/* Card styles */
+.card {
+  width: 250px;
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #fff;
+  border-color: goldenrod;
+  position: relative;
+}
+
+/* Card title styles */
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Card details styles */
+.card p {
+  margin: 5px 0;
+}
+
+/* Card link styles */
+.card a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+/* Delete button styles */
+.card button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
+.card button:hover {
+  background-color: #c82333;
+}
+
+
+/* Navigation arrows styles */
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+ 
+}
+
+/* ... (other CSS rules remain the same) */
