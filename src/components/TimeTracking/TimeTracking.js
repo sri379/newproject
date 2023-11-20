@@ -26,7 +26,10 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
     const sec = seconds % 60;
     return `${hrs}:${mins}:${sec}`;
   };
-
+const iconStyle = {
+    width: '32px',
+      height: '32px',
+};
   const handleTimeIn = () => {
     if (currentUser && currentUser.isLogin) {
       const currentDate = new Date().toLocaleDateString();
@@ -118,19 +121,23 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   const navigateToEmployeeList = () => {
     navigate('/employee-list');
   };
-
+const iconStyle1={
+  width: '30px',
+  height: '30px',
+}
   return (
     <div className='new'>
       <header>
       <h2 >Time Forge Portal</h2>
         <ToastContainer position='bottom-right' draggable={false} transition={Zoom} autoClose={4000} closeOnClick={false} />
-        <button onClick={handleLogout} className="logout-button">Logout</button>
+        <button onClick={handleLogout} className="logout-button">  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} />
+        </button>
       </header>
 
       <div>
         <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
         <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
-        <button onClick={navigateToEmployeeList} className="back-button">Back</button>
+        <button onClick={navigateToEmployeeList} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
 
         <h2 className='tracking'>Time Records</h2>
         <table>

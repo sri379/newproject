@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import './AdminDashboard.css';
-
+const iconStyle1={
+    width: '30px',
+    height: '30px',
+  }
 const AdminDashboard = ({ isAuth,logout }) => {
   const navigate = useNavigate();
 
@@ -45,7 +48,7 @@ const AdminDashboard = ({ isAuth,logout }) => {
     <div >
         <header>
         <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
-        <button onClick={handleLogout} className="logout-button">Logout</button>
+        <button className='log'onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
         </header>
        
     <div className="list1">   

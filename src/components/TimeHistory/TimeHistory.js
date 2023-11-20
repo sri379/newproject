@@ -65,7 +65,10 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
   const navigateToAdmin = () => {
     navigate('/admin-dashboard');
   };
-
+  const iconStyle = {
+    width: '32px',
+    height: '32px',
+};
   return (
     <div className="container">
       <header>
@@ -75,9 +78,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
         {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
           <button onClick={navigateToAdmin}>Employee List</button>
         )}
-        <button className='back-button' onClick={navigateToAdmin}>
-          Back
-        </button>
+          <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
       </header>
       <div>
         <label className='select-his'>Select Employee:</label>

@@ -24,8 +24,12 @@ const EmployeeList = ({ logout, isAuth }) => {
     setIsLoggedIn(currentUser.isLogin);
   }, [isAuth]);
   const iconStyle = {
-    width: '24px',
-    height: '24px',
+    width: '32px',
+    height: '32px',
+};
+const iconStyle1 = {
+    width: '30px',
+    height: '30px',
 };
 const handleDeleteUser = (userId) => {
     // Implement the logic to delete a user based on the user ID
@@ -77,21 +81,33 @@ const handleDeleteUser = (userId) => {
     const totalPages = Math.ceil(users.length / itemsPerPage);
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
-
+  const iconWrapperStyle = {
+    margin: '8px 8px 0 8px', // Added vertical margin
+  };
+  const iconStyle3 = {
+    width: '32px',
+      height: '32px',
+      
+};
+const iconStyle4 = {
+    width: '36px',
+      height: '36px',
+      
+};
   return (
     <div className="employee-container">
       <header>
       <h2>Time Forge Portal</h2>
         <div className="navigation-arrows">
         <div className="arrow" onClick={handlePreviousPage}>
-            &lt;-
-          </div>
+        &lt;-
+         </div>
           <div className="arrow" onClick={handleNextPage}>
-            -&gt;
+          -&gt;
           </div>
         </div>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
+        <button className='log' onClick={handleLogout}>
+        <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} />
         </button>
         </header>
       
@@ -99,8 +115,8 @@ const handleDeleteUser = (userId) => {
       <div className="employee-cards">
         {currentUsers.map((user) => (
           !(isAuth && user.id === 101) && (
-            <div key={user.id} className="card">
-            <img src={require("../../images/id-icon.png")} alt="ID Icon" style={iconStyle} />
+            <div key={user.id} className="card">            
+<img src={require("../../images/id-icon.png")} alt="ID Icon" style={iconStyle} />
               <h3>{user.name}</h3>
 
               <img src={require("../../images/designation-icon.png")} alt="ID Icon" style={iconStyle} />
@@ -127,7 +143,7 @@ const handleDeleteUser = (userId) => {
                   onClick={() => handleDeleteUser(user.id)}
                   disabled={currentUser.id === user.id}
                 >
-                  Delete
+            <img src={require("../../deleee.png")} alt="ID Icon" style={iconStyle} />
                 </button>
               )}
             </div>
