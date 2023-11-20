@@ -93,21 +93,21 @@ const AddUserForm = () => {
       <form className='now-form'>
         {/* Add your form fields here */}
         <label className='now-label'>Name:</label>
-        <input type='text' name='name' value={newUser.name} onChange={handleChange} required />
+        <input className='now-input'type='text' name='name' value={newUser.name} onChange={handleChange} required />
 
         <label className='now-label'>Password:</label>
-        <input type='text' name='password' value={newUser.password} onChange={handleChange} required />
+        <input className='now-input' type='text' name='password' value={newUser.password} onChange={handleChange} required />
 
         <label className='now-label'>Designation:</label>
-        <input type='text' name='designation' value={newUser.designation} onChange={handleChange} required />
+        <input className='now-input' type='text' name='designation' value={newUser.designation} onChange={handleChange} required />
 
         <label className='now-label'>Contact Number:</label>
-        <input type='text' name='contactNumber' value={newUser.contactNumber} onChange={handleChange} required />
+        <input className='now-input' type='text' name='contactNumber' value={newUser.contactNumber} onChange={handleChange} required />
 
         <label className='now-label'>Email:</label>
-        <input type='text' name='email' value={newUser.email} onChange={handleChange} required />
+        <input className='now-input'type='text' name='email' value={newUser.email} onChange={handleChange} required />
         <label className='now-label'>Project:</label>
-        <input type='text' name='project' value={newUser.project} onChange={handleChange} required />
+        <input className='now-input' type='text' name='project' value={newUser.project} onChange={handleChange} required />
 
        <span> <button type='button' className='now-button' onClick={handleAddUser}>
           Submit

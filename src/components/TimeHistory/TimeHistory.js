@@ -73,12 +73,13 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
     <div className="container">
       <header>
         <h1>Time Forge Portal</h1>
+        <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
         <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
        
         {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
           <button onClick={navigateToAdmin}>Employee List</button>
         )}
-          <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+         
       </header>
       <div>
         <label className='select-his'>Select Employee:</label>
