@@ -114,10 +114,10 @@ const navigateToAdmin = () => {
       
         <div className="navigation-arrows">
         <div className="arrow" onClick={handlePreviousPage}>
-        &lt;-
+        <img src={require("../../icon10-last-52.png")} alt="Back Icon" style={iconStyle5} />
          </div>
           <div className="arrow" onClick={handleNextPage}>
-          -&gt;
+          <img src={require("../../icon9-last-51.png")} alt="Back Icon" style={iconStyle5} />
           </div>
         </div>
         <button className='log' onClick={handleLogout}>
