@@ -1,11 +1,6 @@
 /* TimeHistory.css */
 
-/* Reset margin and padding on the body */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ... other styles ... */
 
 /* Container styling */
 .container {
@@ -13,8 +8,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+ 
 }
+
 
 /* Style for labels */
 .select-his {
@@ -37,11 +33,11 @@ body {
   cursor: pointer;
 }
 
-
 /* Header styling */
-header {
+.header2 {
   width: 100%;
   text-align: center;
+  background-color: #A05F43;
 }
 
 /* Additional styling for the back button */
@@ -55,23 +51,76 @@ header {
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
-  position: absolute; /* Position the button absolutely within the container */
-  top: 18px; /* Adjust the top distance as needed */
+  position: absolute;
+  top: 18px;
   right: 10px;
 }
 
-
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-
-
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
 }
+
+/* Container for input, dropdown, and label */
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 15px; /* Adjust as needed */
+  margin-bottom: 15px;
+}
+
+/* Style for labels within the container */
+.input-container label {
+  margin-bottom: 5px;
+}
+
+/* Style for input and select within the container */
+.input-container input,
+.input-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+ margin-top: 20px;
+}
+/* TimeHistory.css */
+
+/* ... other styles ... */
+
+/* Container for the cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* Adjust as needed */
+}
+
+/* Style for the input cards */
+.input-card {
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.body-full1 {
+  margin: 0;
+  padding: 0;
+  background-image: url('../../time-tracking-module-background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+/* ... other styles ... */

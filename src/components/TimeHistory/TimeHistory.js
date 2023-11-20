@@ -70,10 +70,13 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
     height: '32px',
 };
   return (
+    <div className='body-full1'>
     <div className="container">
-      <header>
+       
+      <header className='header2'>
+      <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
         <h1>Time Forge Portal</h1>
-        <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+        
         <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
        
         {(isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator')) && (
@@ -81,54 +84,66 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
         )}
          
       </header>
-      <div>
-        <label className='select-his'>Select Employee:</label>
-        <select className='select-his'
-          value={selectedEmployee}
-          onChange={(e) => setSelectedEmployee(e.target.value)}
-          required
-        >
-          <option value="">Select an Employee</option>
-          {users.map((user) => (
-            <option key={user.id} value={user.name}>
-              {user.name}
-            </option>
-          ))}
-        </select>
+      <div className="card-container">
+        {/* Employee Dropdown */}
+        <div className='input-card'>
+          <label className='select-his'>Select Employee:</label>
+          <select
+            className='select-his'
+            value={selectedEmployee}
+            onChange={(e) => setSelectedEmployee(e.target.value)}
+            required
+          >
+            <option value="">Select an Employee</option>
+            {users.map((user) => (
+              <option key={user.id} value={user.name}>
+                {user.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Date Input */}
+        <div className='input-card'>
+          <label className='select-his'>Select Date:</label>
+          <input
+            className='select-his'
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            required
+          />
+        </div>
+
+        {/* Month Dropdown */}
+        <div className='input-card'>
+          <label className='select-his'>Select Month:</label>
+          <select
+            className='select-his'
+            value={selectedMonth}
+            onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
+          >
+            <option value="">Select a Month</option>
+            <option value={1}>January</option>
+            <option value={2}>February</option>
+            <option value={3}>March</option>
+            <option value={4}>April</option>
+            <option value={5}>May</option>
+            <option value={6}>June</option>
+            <option value={7}>July</option>
+            <option value={8}>August</option>
+            <option value={9}>September</option>
+            <option value={10}>October</option>
+            <option value={11}>November</option>
+            <option value={12}>December</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <label className='select-his'>Select Date:</label>
-        <input className='select-his'
-          type="date"
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label className='select-his'>Select Month:</label>
-        <select className='select-his'
-          value={selectedMonth}
-          onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
-        >
-          <option value="">Select a Month</option>
-          <option value={1}>January</option>
-          <option value={2}>February</option>
-          <option value={3}>March</option>
-          <option value={4}>April</option>
-          <option value={5}>May</option>
-          <option value={6}>June</option>
-          <option value={7}>July</option>
-          <option value={8}>August</option>
-          <option value={9}>September</option>
-          <option value={10}>October</option>
-          <option value={11}>November</option>
-          <option value={12}>December</option>
-        </select>
-      </div>
-      <button className='button-his' onClick={handleGenerateTimeHistory}>Generate Time History</button>
-      <button className='button-his' onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>
+      <div className='button-container'>
+      <button className='button-his' onClick={handleGenerateTimeHistory}>Generate Time History</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button className='button-his' onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>&nbsp;&nbsp;&nbsp;&nbsp;
       <button className='button-his' onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>
+      </div>
       {isEmployeeAndDateSelected && (
         <>
           {generatedTimeHistory.length > 0 ? (
@@ -166,6 +181,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
           )}
         </>
       )}
+    </div>
     </div>
   );
 };
