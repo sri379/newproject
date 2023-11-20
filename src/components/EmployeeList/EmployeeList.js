@@ -94,10 +94,24 @@ const iconStyle4 = {
       height: '36px',
       
 };
+const iconStyle5 = {
+    width: '26px',
+    height: '26px',
+};
+const navigateToAdmin = () => {
+    navigate('/admin-dashboard');
+  };
   return (
     <div className="employee-container">
       <header>
+     
       <h2>Time Forge Portal</h2>
+      {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
+          <button  onClick={navigateToAdmin}>
+            <img src={require("../../Back-button.png")} alt="Back Icon" style={iconStyle5} />
+          </button>
+        )}
+      
         <div className="navigation-arrows">
         <div className="arrow" onClick={handlePreviousPage}>
         &lt;-
