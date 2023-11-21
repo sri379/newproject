@@ -8,6 +8,10 @@ const iconStyle1={
     width: '30px',
     height: '30px',
   }
+  const iconStylelogo = {
+    width: '140px',
+    height: '64px',
+};
 const AdminDashboard = ({ isAuth,logout }) => {
   const navigate = useNavigate();
 
@@ -47,6 +51,7 @@ const AdminDashboard = ({ isAuth,logout }) => {
   return (
     <div className='body-full' >
         <header>
+        <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
         <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
         <div className="list1">   
     {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (

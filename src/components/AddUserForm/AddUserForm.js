@@ -77,18 +77,22 @@ const AddUserForm = () => {
     width: '24px',
     height: '24px',
 };
-
+const iconStylelogo = {
+    width: '140px',
+    height: '62px',
+};
   return (
     <div className='now-body'>
         
-   <header>
-   <h1 className='h1-form'>Time Forge Portal</h1>
+   <header className='header-add'>
+   <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
+   <h1 className='h2-form'>Time Forge Portal</h1>
    <button onClick={backToAdmin} className="back-button1"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
    </header>
         
     <div className='user-form-container'>
          <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false} />
-      <h1 className='h1-form'>Add New User</h1>
+      <h2 className='h1-form'>Add New User</h2>
 
       <form className='now-form'>
         {/* Add your form fields here */}

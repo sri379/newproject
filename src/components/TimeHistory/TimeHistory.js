@@ -69,11 +69,16 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
     width: '32px',
     height: '32px',
 };
+const iconStylelogo = {
+    width: '140px',
+    height: '64px',
+};
   return (
     <div className='body-full1'>
     <div className="container">
        
       <header className='header2'>
+      <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
       <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
         <h1>Time Forge Portal</h1>
         

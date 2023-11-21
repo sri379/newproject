@@ -1,15 +1,15 @@
 /* AddUserForm.css */
 .now-body {
-    background-color: lightgoldenrodyellow;/* Set your desired background color */
+    /* Set your desired background color */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
   }
-  header {
+  .header-add {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: palegoldenrod;
+    background-color: linen;
     height: 60px; 
   }
 .user-form-container {
@@ -22,8 +22,12 @@
   }
   
   .h1-form {
-    text-align: center;
+    text-align: left;
   }
+  .h2-form {
+    text-align: left;
+  }
+  
   
   .now-form {
     display: flex;

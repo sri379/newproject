@@ -4,7 +4,10 @@ import users from '../../data/User';
 import './TimeTracking.css';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+const iconStylelogo = {
+  width: '140px',
+  height: '64px',
+};
 const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -128,6 +131,7 @@ const iconStyle1={
   return (
     <div className='new'>
       <header>
+      <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
       <h2 >Time Forge Portal</h2>
         <ToastContainer position='bottom-right' draggable={false} transition={Zoom} autoClose={4000} closeOnClick={false} />
         <button onClick={handleLogout} className="logout-button">  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} />

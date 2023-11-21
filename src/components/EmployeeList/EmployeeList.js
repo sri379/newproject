@@ -32,6 +32,10 @@ const iconStyle1 = {
     width: '30px',
     height: '30px',
 };
+const iconStylelogo = {
+    width: '140px',
+    height: '64px',
+};
 const handleDeleteUser = (userId) => {
     // Display a confirmation dialog
     const confirmDelete = window.confirm('Are you sure you want to delete this user?');
@@ -81,19 +85,7 @@ const handleLogout = () => {
     const totalPages = Math.ceil(users.length / itemsPerPage);
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
-  const iconWrapperStyle = {
-    margin: '8px 8px 0 8px', // Added vertical margin
-  };
-  const iconStyle3 = {
-    width: '32px',
-      height: '32px',
-      
-};
-const iconStyle4 = {
-    width: '36px',
-      height: '36px',
-      
-};
+ 
 const iconStyle5 = {
     width: '26px',
     height: '26px',
@@ -103,8 +95,8 @@ const navigateToAdmin = () => {
   };
   return (
     <div className="employee-container">
-      <header>
-     
+      <header >
+      <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
       <h2>Time Forge Portal</h2>
       {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
           <button  onClick={navigateToAdmin}>
