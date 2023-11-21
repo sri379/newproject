@@ -31,7 +31,7 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   };
 const iconStyle = {
     width: '28px',
-      height: '28px',
+      height: '28px', //
 };
   const handleTimeIn = () => {
     if (currentUser && currentUser.isLogin) {
