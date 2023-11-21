@@ -40,21 +40,7 @@
   background-color: #948078;
 }
 
-/* Additional styling for the back button */
-.back-button {
-  background-color: white;
-  color: white;
-  border: none;
-  border-color: black;
-  border-radius: 3px;
-  padding: 10px 10px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 20px;
-  position: absolute;
-  top: 18px;
-  right: 10px;
-}
+
 
 /* Table styling */
 table {
@@ -122,5 +108,10 @@ th, td {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+}
+.back-buttonn{
+  position:absolute;
+  right: 10px;
+  
 }
 /* ... other styles ... */

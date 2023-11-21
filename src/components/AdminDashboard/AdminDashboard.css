@@ -27,3 +27,13 @@
     cursor: pointer;
     
   }
+/* AdminDashboard.css */
+
+.list1 a {
+    text-decoration: none;
+    color: blue; /* Set the color to black or your preferred color */
+    font-size: large;
+  }
+  
+  /* Add any other styles you need for your application */
+  

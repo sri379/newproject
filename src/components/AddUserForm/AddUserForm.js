@@ -87,7 +87,7 @@ const iconStylelogo = {
    <header className='header-add'>
    <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
    <h1 className='h2-form'>Time Forge Portal</h1>
-   <button onClick={backToAdmin} className="back-button1"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+   <button onClick={backToAdmin} > <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
    </header>
         
     <div className='user-form-container'>

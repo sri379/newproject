@@ -79,8 +79,9 @@ const iconStylelogo = {
        
       <header className='header2'>
       <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
-      <button onClick={navigateToAdmin} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+     
         <h1>Time Forge Portal</h1>
+        <button onClick={navigateToAdmin} className='back-buttonn'> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
         
         <ToastContainer position='bottom-right' transition={Zoom} autoClose={4000} closeOnClick={false}/>
        

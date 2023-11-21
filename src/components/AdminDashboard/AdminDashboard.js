@@ -4,15 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import users from '../../data/User';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import './AdminDashboard.css';
-const iconStyle1={
-    width: '30px',
-    height: '30px',
-  }
-  const iconStylelogo = {
-    width: '140px',
-    height: '64px',
+import { Link } from 'react-router-dom'; // Change this import
+const iconStyle1 = {
+  width: '30px',
+  height: '30px',
 };
-const AdminDashboard = ({ isAuth,logout }) => {
+const iconStylelogo = {
+  width: '140px',
+  height: '64px',
+};
+const AdminDashboard = ({ isAuth, logout }) => {
   const navigate = useNavigate();
 
   const navigateToTimeHistory = () => {
@@ -50,28 +51,24 @@ const AdminDashboard = ({ isAuth,logout }) => {
 
   return (
     <div className='body-full' >
-        <header>
+      <header>
         <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
         <h1 className='h1-pro'>Welcome Back to Admin Dashboard</h1>
-        <div className="list1">   
-    {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
-    <>
-    <button  className='button-his1'onClick={navigateToAddUserForm}>Add User</button> &nbsp;&nbsp;
-   
-  </>
-         )}
-      {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
-       <> <button className='button-his1' onClick={navigateToTimeHistory}>Time History</button> &nbsp;&nbsp;
-        <button  className='button-his1'onClick={navigateToEmployeeList}>EmployeeList</button>
-        </>
-      )}
-      
-    
-    </div>
-        <button className='log'onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
-        </header>
-       
-   
+        <div className="list1">
+          {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
+            <>
+              <Link className='list1 a' to="/add-user-form">Add User</Link> &nbsp;&nbsp;
+            </>
+          )}
+          {isAuth && (isAuth.name === 'Admin' || isAuth.designation === 'Administrator') && (
+            <>
+              <Link to="/time-history">Time History</Link> &nbsp;&nbsp;
+              <Link to="/employee-list">Employee List</Link>
+            </>
+          )}
+        </div>
+        <button className='log' onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
+      </header>
     </div>
   );
 };
