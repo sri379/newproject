@@ -30,8 +30,8 @@ const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
     return `${hrs}:${mins}:${sec}`;
   };
 const iconStyle = {
-    width: '32px',
-      height: '32px',
+    width: '28px',
+      height: '28px',
 };
   const handleTimeIn = () => {
     if (currentUser && currentUser.isLogin) {
@@ -134,6 +134,7 @@ const iconStyle1={
       <img src={require("../../time forge logo.jpeg")} alt="ID Icon" style={iconStylelogo} />
       <h2 >Time Forge Portal</h2>
         <ToastContainer position='bottom-right' draggable={false} transition={Zoom} autoClose={4000} closeOnClick={false} />
+        <button onClick={navigateToEmployeeList} className="back-buttonn-his"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
         <button onClick={handleLogout} className="logout-button">  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} />
         </button>
       </header>
@@ -141,7 +142,7 @@ const iconStyle1={
       <div>
         <button onClick={handleTimeIn} className="time-tracking-button">Time In</button>
         <button onClick={handleTimeOut} className="time-tracking-button">Time Out</button>
-        <button onClick={navigateToEmployeeList} className="back-button"> <img src={require("../../Back-button.png")} alt="ID Icon" style={iconStyle} /></button>
+      
 
         <h2 className='tracking'>Time Records</h2>
         <table>

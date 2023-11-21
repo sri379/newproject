@@ -37,7 +37,7 @@
 .header2 {
   width: 100%;
   text-align: center;
-  background-color:wheat;
+  background-color:linen;
 }
 
 
@@ -103,7 +103,7 @@ th, td {
 .body-full1 {
   margin: 0;
   padding: 0;
-  background-image: url('../../time-tracking-module-background.jpg'); 
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
