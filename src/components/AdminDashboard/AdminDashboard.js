@@ -11,7 +11,7 @@ const iconStyle1 = {
 };
 const iconStylelogo = {
   width: '140px',
-  height: '64px',
+  height: '62px',
 };
 const AdminDashboard = ({ isAuth, logout }) => {
   const navigate = useNavigate();

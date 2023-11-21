@@ -20,6 +20,7 @@ h2 {
 
 .employee-container{
   /* background-color: lightsteelblue; */
+  
 }
 
 
@@ -29,8 +30,27 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
 
-}
 
+}
+.back-buttonn-his{
+  position:absolute;
+  right: 60px;
+  
+}
+/* Employee cards styles */
+
+
+
+/* ... (other existing styles remain the same) */
+
+.grid-adder{
+  
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    align-items: center
+
+    
+}
 /* Card styles */
 .log{
   

@@ -71,7 +71,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
 };
 const iconStylelogo = {
     width: '140px',
-    height: '64px',
+    height: '62px',
 };
   return (
     <div className='body-full1'>

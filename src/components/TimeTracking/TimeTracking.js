@@ -6,7 +6,7 @@ import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const iconStylelogo = {
   width: '140px',
-  height: '64px',
+  height: '62px',
 };
 const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
   const navigate = useNavigate();
