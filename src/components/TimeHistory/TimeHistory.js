@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import users from '../../data/User';
 import { useNavigate } from 'react-router-dom';
-import './TimeHistory.css';  // Assuming you have a TimeHistory.css file
+import './TimeHistory.css';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,6 +25,7 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
   const [generatedTimeHistory, setGeneratedTimeHistory] = useState([]);
   const [isEmployeeAndDateSelected, setIsEmployeeAndDateSelected] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState(1);
+  const [loaderDownload, setLoaderDownload] = useState(false);
 
   // Function to generate time history based on selected employee and date
   const handleGenerateTimeHistory = () => {
@@ -78,6 +79,57 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
   // Function to navigate to the admin dashboard
   const navigateToAdmin = () => {
     navigate('/admin-dashboard');
+  };
+  const formatExcelDate = (date) => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  };
+
+  // Function to download CSV
+  const downloadCsv = () => {
+    try {
+      setLoaderDownload(true); // Show loader before starting the download process
+
+      // Retrieve timeRecords from local storage
+      const timeRecordsFromLocalStorage = JSON.parse(localStorage.getItem('timeRecords')) || [];
+
+      const csvData = timeRecordsFromLocalStorage.map((record) => ({
+        "User ID": record.userId,
+        "User Name": record.userName,
+        "Date":  formatExcelDate(new Date(record.date)), 
+        "Project": record.project,
+        "Time In": record.timeIn,
+        "Time Out": record.timeOut || 'N/A',
+        "Total Hours Worked": record.timeDiff || 'N/A',
+       
+      }));
+
+      const csvRows = [];
+      const headers = Object.keys(csvData[0]);
+      csvRows.push(headers.join(','));
+
+      for (const row of csvData) {
+        const values = headers.map(header => row[header]);
+        csvRows.push(values.join(','));
+      }
+
+      const csvContent = csvRows.join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'time_records.csv';
+      link.click();
+
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoaderDownload(false); 
+    }
   };
 
   return (
@@ -154,7 +206,14 @@ const TimeHistory = ({ timeRecords, isAuth }) => {
         <div className='button-container'>
           <button className='button-his' onClick={handleGenerateTimeHistory}>Generate Time History</button>&nbsp;&nbsp;&nbsp;&nbsp;
           <button className='button-his' onClick={handleShowAllEmployeeTimeHistory}>All Employee Time History</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          <button className='button-his' onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>
+          <button className='button-his' onClick={handleGenerateMonthWiseReport}>Month-Wise Report</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button
+            className=' button-his-load'
+            onClick={downloadCsv}
+            disabled={loaderDownload}
+          >
+            {loaderDownload ? 'Downloading...' : 'Download CSV'}
+          </button>
         </div>
 
         {isEmployeeAndDateSelected && (
