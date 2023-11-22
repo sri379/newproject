@@ -73,6 +73,7 @@ const AddUserForm = () => {
 
     navigate('/add-user-form');
   };
+  //styles for main logo and back button
   const iconStyle = {
     width: '24px',
     height: '24px',

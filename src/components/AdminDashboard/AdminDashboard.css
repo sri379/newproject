@@ -34,6 +34,10 @@
     color: blue; /* Set the color to black or your preferred color */
     font-size: large;
   }
-  
+  .logout  {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px; /* Adjust margin as needed */
+  }
   /* Add any other styles you need for your application */
   

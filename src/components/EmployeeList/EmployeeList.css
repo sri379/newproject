@@ -18,10 +18,7 @@ h2 {
 
 /* Logout button styles */
 
-.employee-container{
-  /* background-color: lightsteelblue; */
-  
-}
+
 
 
 /* Employee cards styles */
@@ -52,10 +49,10 @@ h2 {
     
 }
 /* Card styles */
-.log{
+/* .log{
   
   background-color: lightgoldenrodyellow;
-}
+} */
 .card {
   width: 250px;
   margin: 10px;
@@ -120,6 +117,7 @@ h2 {
   font-size: 24px;
  
 }
-
-
-/* ... (other CSS rules remain the same) */
+.icons{
+  width: 32px;
+  height: 32px;
+}

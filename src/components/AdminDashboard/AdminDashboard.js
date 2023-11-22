@@ -3,10 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
 import { Link } from 'react-router-dom'; // Change this import
-const iconStyle1 = {
-  width: '30px',
-  height: '30px',
-};
+
 const iconStylelogo = {
   width: '140px',
   height: '62px',
@@ -35,7 +32,7 @@ const AdminDashboard = ({ isAuth, handleLogout }) => {
             </>
           )}
         </div>
-        <button className='log' onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" style={iconStyle1} /></button>
+        <button  onClick={handleLogout} >  <img src={require("../../logout icon.png")} alt="ID Icon" className='logout' /></button>
       </header>
     </div>
   );
