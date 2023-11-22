@@ -8,7 +8,7 @@ const iconStylelogo = {
   width: '140px',
   height: '62px',
 };
-const TimeTracking = ({ timeRecords, setTimeRecords, logout }) => {
+const TimeTracking = ({ timeRecords, setTimeRecords, handleLogout }) => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -97,29 +97,7 @@ const iconStyle = {
   };
 
   
-  const handleLogout = () => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-    if (currentUser) {
-      console.log('Logging out user:', currentUser);
-
-      const currentUserIndex = users.findIndex((user) => user.id === currentUser.id);
-
-      if (currentUserIndex !== -1) {
-        users[currentUserIndex].isLogin = false;
-        console.log('Updated user in the users array:', users[currentUserIndex]);
-      }
-
-      localStorage.setItem('currentUser', JSON.stringify({ "isLogin": false }));
-      console.log('User data in local storage after update:', JSON.parse(localStorage.getItem('currentUser')));
-
-      localStorage.setItem('users', JSON.stringify(users));
-      console.log('Users data in local storage after update:', JSON.parse(localStorage.getItem('users')));
-    }
-    toast.info("Logged out successfully!");
-    logout();
-    navigate('/');
-  };
+ 
 
   const navigateToEmployeeList = () => {
     navigate('/employee-list');

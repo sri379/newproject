@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import './EmployeeList.css';
-import users from '../../data/User';
 
-const EmployeeList = ({ logout, isAuth }) => {
+
+const EmployeeList = ({ handleLogout, isAuth }) => {
   const [isLoggedin, setIsLoggedIn] = useState(false);
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem('users')) || []);
   const navigate = useNavigate();
@@ -44,24 +44,7 @@ const EmployeeList = ({ logout, isAuth }) => {
     }
   };
 
-  const handleLogout = () => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-    if (currentUser) {
-      const currentUserIndex = users.findIndex((user) => user.id === currentUser.id);
-
-      if (currentUserIndex !== -1) {
-        users[currentUserIndex].isLogin = false;
-      }
-
-      localStorage.setItem('currentUser', JSON.stringify({ "isLogin": false }));
-      localStorage.setItem('users', JSON.stringify(users));
-    }
-
-    toast.info("Logged out successfully!");
-    logout();
-    navigate('/');
-  };
 
   const iconStyle5 = {
     width: '26px',
